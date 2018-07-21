@@ -1,0 +1,663 @@
+a) /checkLogin:
+
+
+RequestBodyJSON:
+
+{
+	"user_id" : "test@dal.ca"
+	"password" : "test123"
+}
+
+ResponseBodyJSON:
+
+{
+	"status": "SUCCESS",
+	"loginStatus": "LOGIN_SUCCESS"
+}
+
+{
+	"status": "SUCCESS",
+	"loginStatus": "LOGIN_FAILURE"
+}
+
+b) /setUser:
+
+RequestBodyJSON:
+
+{
+	"firstName": "visakan"
+	"lastName": "bapu"
+	"email": "test@dal.ca"
+	"password": "test123"
+	"contact": "9022935916"
+}
+
+
+ResponseBodyJSON:
+
+{
+	"status": "SUCCESS",
+	"registerStatus": "REGISTER_SUCCESS"
+}
+
+{
+	"status": "SUCCESS",
+	"registerStatus": "REGISTER_FAILURE"
+}
+
+c) /getSearchResults/{name}
+
+ResponseBodyJSON:
+
+{
+	"status": "SUCCESS",
+	"data": [{
+			"product_name": "Onions",
+			"product_id": "1",
+			"product_brand": "",
+			"storeDetails": [{
+					"store_id": "1",
+					"store_name": "Walmart",
+					"product_store_quantity": "50",
+					"product_store_price": "2.5",
+					"store_lat": "44.6464782",
+					"store_long": "-63.620721300000014"
+				},
+				{
+					"store_id": "2",
+					"store_name": "Sobey's",
+					"product_store_quantity": "25",
+					"product_store_price": "3.5",
+					"store_lat": "44.6372691",
+					"store_long": "-63.57399700000002"
+				},
+				{
+					"store_id": "3",
+					"store_name": "Atlantic",
+					"product_store_quantity": "70",
+					"product_store_price": "2.0",
+					"store_lat": "40.741895",
+					"store_long": "-73.989308"
+				},
+				{
+					"store_id": "4",
+					"store_name": "Walmart - Spring Garden",
+					"product_store_quantity": "0",
+					"product_store_price": "1.5",
+					"store_lat": "44.6464782",
+					"store_long": "-63.620721300000014"
+				},
+				{
+					"store_id": "5",
+					"store_name": "Atlantic - Spring Garden",
+					"product_store_quantity": "5",
+					"product_store_price": "2.9",
+					"store_lat": "40.741895",
+					"store_long": "-73.989308"
+				}
+			],
+			"category_id": "1",
+			"category_name": "GROCERY"
+		},
+		{
+			"product_name": "Shallot Onions",
+			"product_id": "2",
+			"product_brand": "",
+			"storeDetails": [{
+					"store_id": "1",
+					"store_name": "Walmart",
+					"product_store_quantity": "10",
+					"product_store_price": "2.5",
+					"store_lat": "44.6464782",
+					"store_long": "-63.620721300000014"
+				},
+				{
+					"store_id": "2",
+					"store_name": "Sobey's",
+					"product_store_quantity": "25",
+					"product_store_price": "3.5",
+					"store_lat": "44.6372691",
+					"store_long": "-63.57399700000002"
+				},
+				{
+					"store_id": "3",
+					"store_name": "Atlantic",
+					"product_store_quantity": "100",
+					"product_store_price": "2.0",
+					"store_lat": "40.741895",
+					"store_long": "-73.989308"
+				},
+				{
+					"store_id": "4",
+					"store_name": "Walmart - Spring Garden",
+					"product_store_quantity": "40",
+					"product_store_price": "1.5",
+					"store_lat": "44.6464782",
+					"store_long": "-63.620721300000014"
+				},
+				{
+					"store_id": "5",
+					"store_name": "Atlantic - Spring Garden",
+					"product_store_quantity": "57",
+					"product_store_price": "2.9",
+					"store_lat": "40.741895",
+					"store_long": "-73.989308"
+				}
+			],
+			"category_id": "1",
+			"category_name": "GROCERY"
+		},
+		{
+			"product_name": "Calicot Onions",
+			"product_id": "3",
+			"product_brand": "",
+			"storeDetails": [{
+					"store_id": "1",
+					"store_name": "Walmart",
+					"product_store_quantity": "100",
+					"product_store_price": "2.5",
+					"store_lat": "44.6464782",
+					"store_long": "-63.620721300000014"
+				},
+				{
+					"store_id": "2",
+					"store_name": "Sobey's",
+					"product_store_quantity": "250",
+					"product_store_price": "3.5",
+					"store_lat": "44.6372691",
+					"store_long": "-63.57399700000002"
+				},
+				{
+					"store_id": "3",
+					"store_name": "Atlantic",
+					"product_store_quantity": "10",
+					"product_store_price": "2.0",
+					"store_lat": "40.741895",
+					"store_long": "-73.989308"
+				},
+				{
+					"store_id": "4",
+					"store_name": "Walmart - Spring Garden",
+					"product_store_quantity": "4",
+					"product_store_price": "1.5",
+					"store_lat": "44.6464782",
+					"store_long": "-63.620721300000014"
+				},
+				{
+					"store_id": "5",
+					"store_name": "Atlantic - Spring Garden",
+					"product_store_quantity": "7",
+					"product_store_price": "2.9",
+					"store_lat": "40.741895",
+					"store_long": "-73.989308"
+				}
+			],
+			"category_id": "1",
+			"category_name": "GROCERY"
+		}
+	]
+}
+}
+
+d) /setCart:
+
+RequestBodyJSON:
+
+{
+	"user_id": "2",
+	"product_id": "1",
+	"store_id": "2",
+	"product_store_quantity": "6"
+}
+
+ResponseBodyJSON:
+
+{
+	"status": "SUCCESS",
+	"setCartStatus": "PRODUCT_ADDED"
+}
+
+
+{
+	"status": "SUCCESS",
+	"setCartStatus": "UNABLE_TO_ADD_TO_CART"
+}
+
+e) /getCart:
+
+
+RequestBodyJSON:
+
+{
+	"user_id" : "2"
+}
+
+ResponseBodyJSON:
+
+{
+	"status": "SUCCESS",
+	"data": [{
+			"product_brand": "JBL",
+			"cart_quantity": "2",
+			"cart_price": "1000",
+			"category_name": "ELECTRONICS",
+			"category_id": "2",
+			"cart_id": "1",
+			"store_id": "6",
+			"product_name": "HEADPHONES",
+			"product_id": "10",
+			"store_name": "BEST_BUY"
+		},
+		{
+			"product_brand": "",
+			"cart_quantity": "5",
+			"cart_price": "100",
+			"category_name": "GROCERY",
+			"category_id": "1",
+			"cart_id": "2",
+			"store_id": "1",
+			"product_name": "Onions",
+			"product_id": "1",
+			"store_name": "WALMART"
+		}
+	]
+}
+
+
+f) /setAddress:
+
+RequestBodyJSON:
+
+{
+	"user_id": "1",
+	"address_line_1": "1333, South Park Street",
+	"address_line_2": "",
+	"city": "Halifax",
+	"province": "NS",
+	"postal_code" : "B3J2K9"
+}
+
+ResponseBodyJSON:
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "ADDRESS_ADDED"
+}
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "ADDRESS_NOT_ADDED"
+}
+
+g) /getAddress:
+
+RequestBodyJSON:
+
+{
+	"user_id": "2"
+}
+
+ResponseBodyJSON:
+
+{
+	"status": "SUCCESS",
+	"data": [{
+			"address_line_1": "1333, South Park Street",
+			"address_line_2": "",
+			"city": "Halifax",
+			"province": "NS",
+			"postal_code": "B3J2K9"
+		},
+		{
+			"address_line_1": "2060, Quingate PL",
+			"address_line_2": "",
+			"city": "Halifax",
+			"province": "NS",
+			"postal_code": "B3L4P7"
+		}
+	]
+}
+
+
+h) /setCardDetails:
+
+RequestBodyJSON:
+
+{
+	"user_id": "2",
+	"card_number": "1234567891011121",
+	"expiry_date": "09/18",
+	"cvv": "124",
+	"card_type": "VISA"
+}
+
+ResponseBodyJSON:
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "CARD_ADDED",
+}
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "CARD_NOT_ADDED",
+}
+
+
+i) /getCardDetails:
+
+RequestBodyJSON:
+
+{
+	"user_id": "2"
+}
+
+ResponseBodyJSON:
+
+{
+	"status": "SUCCESS",
+	"data": [{
+			"card_id": "2",
+			"card_number": "1234567891011121",
+			"expiry_date": "09/18",
+			"cvv": "124",
+			"card_type": "VISA"
+		},
+		{
+			"card_id": "3",
+			"card_number": "1234567891011121",
+			"expiry_date": "09/18",
+			"cvv": "124",
+			"card_type": "VISA"
+		}
+	]
+}
+
+
+j) /setOrder:
+
+RequestBodyJSON:
+
+{
+	"user_id": "2",
+	"address_id": "1",
+	"card_id": "1",
+	"order_price": "300",
+	"product_details": [{
+			"product_id": "1",
+			"store_id": "1",
+			"product_order_quantity": "4",
+			"product_order_price": "10"
+		},
+		{
+			"product_id": "1",
+			"store_id": "4",
+			"product_order_quantity": "4",
+			"product_order_price": "10"
+		},
+		{
+			"product_id": "4",
+			"store_id": "1",
+			"product_order_quantity": "1",
+			"product_order_price": "100"
+		},
+		{
+			"product_id": "3",
+			"store_id": "3",
+			"product_order_quantity": "6",
+			"product_order_price": "180"
+		}
+	]
+}
+
+
+ResponseBodyJSON:
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "PRODUCTS_ADDED_TO_CART",
+}
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "PRODUCTS_NOT_ADDED_TO_CART",
+}
+
+k) /getOrder:
+
+RequestBodyJSON :
+
+{
+	"user_id": "2"
+}
+
+ResponseBodyJSON:
+
+[{
+		"order_id": "1",
+		"order_date": "06/07/2018",
+		"order_price": "300",
+		"order_status": "SHIPPED",
+		"card_id": "1",
+		"card_number": "1234456789145678",
+		"address_line_1": "1333, South Park Street",
+		"address_line_2": "",
+		"city": "Halifax",
+		"province": "NS",
+		"postal_Code": "B3J2K9",
+		"product_details": [{
+				"product_id": "1",
+				"product_name": "Onions",
+				"store_id": "1",
+				"store_name": "Walmart",
+				"product_order_quantity": "4",
+				"product_order_price": "10"
+			},
+			{
+				"product_id": "1",
+				"product_name": "Onions",
+				"store_id": "4",
+				"store_name": "Walmart_Spring_garden",
+				"product_order_quantity": "4",
+				"product_order_price": "10"
+			},
+			{
+				"product_id": "4",
+				"product_name": "Earphones",
+				"store_id": "1",
+				"store_name": "Walmart",
+				"product_order_quantity": "1",
+				"product_order_price": "100"
+			},
+			{
+				"product_id": "3",
+				"product_name": "Onions",
+				"store_id": "3",
+				"store_name": "Atlantic",
+				"product_order_quantity": "6",
+				"product_order_price": "180"
+			}
+		]
+	},
+	{
+		"order_id": "2",
+		"order_date": "06/07/2018",
+		"order_price": "300",
+		"order_status": "CANCELLED",
+		"card_id": "1",
+		"card_number": "1234456789145678",
+		"address_line_1": "1333, South Park Street",
+		"address_line_2": "",
+		"city": "Halifax",
+		"province": "NS",
+		"postal_Code": "B3J2K9",
+		"product_details": [{
+				"product_id": "1",
+				"product_name": "Onions",
+				"store_id": "1",
+				"store_name": "Walmart",
+				"product_order_quantity": "4",
+				"product_order_price": "10"
+			},
+			{
+				"product_id": "1",
+				"product_name": "Onions",
+				"store_id": "4",
+				"store_name": "Walmart_Spring_garden",
+				"product_order_quantity": "4",
+				"product_order_price": "10"
+			},
+			{
+				"product_id": "4",
+				"product_name": "Earphones",
+				"store_id": "1",
+				"store_name": "Walmart",
+				"product_order_quantity": "1",
+				"product_order_price": "100"
+			},
+			{
+				"product_id": "3",
+				"product_name": "Onions",
+				"store_id": "3",
+				"store_name": "Atlantic",
+				"product_order_quantity": "6",
+				"product_order_price": "180"
+			}
+		]
+	},
+	{
+		"order_id": "1",
+		"order_date": "06/07/2018",
+		"order_price": "300",
+		"order_status": "PROCESSING",
+		"card_id": "1",
+		"card_number": "1234456789145678",
+		"address_line_1": "1333, South Park Street",
+		"address_line_2": "",
+		"city": "Halifax",
+		"province": "NS",
+		"postal_Code": "B3J2K9",
+		"product_details": [{
+				"product_id": "1",
+				"product_name": "Onions",
+				"store_id": "1",
+				"store_name": "Walmart",
+				"product_order_quantity": "4",
+				"product_order_price": "10"
+			},
+			{
+				"product_id": "1",
+				"product_name": "Onions",
+				"store_id": "4",
+				"store_name": "Walmart_Spring_garden",
+				"product_order_quantity": "4",
+				"product_order_price": "10"
+			},
+			{
+				"product_id": "4",
+				"product_name": "Earphones",
+				"store_id": "1",
+				"store_name": "Walmart",
+				"product_order_quantity": "1",
+				"product_order_price": "100"
+			},
+			{
+				"product_id": "3",
+				"product_name": "Onions",
+				"store_id": "3",
+				"store_name": "Atlantic",
+				"product_order_quantity": "6",
+				"product_order_price": "180"
+			}
+		]
+	}
+]
+
+l) /updateAddress:
+
+RequestBodyJSON:
+
+{
+	"address_id": "1",
+	"address_line_1": "1333, South Park Street",
+	"address_line_2": "",
+	"city": "Halifax",
+	"province": "NS",
+	"postal_code" : "B3J2K9"
+}
+
+ResponseBodyJSON:
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "ADDRESS_UPDATED"
+}
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "ADDRESS_NOT_UPDATED"
+}
+
+m) /deleteAddress
+
+RequestBodyJSON:
+
+{
+	"address_id" : "4"
+}
+
+ResponseBodyJSON:
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "ADDRESS_DELETED"
+}
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "ADDRESS_NOT_DELETED"
+}
+
+n)/updateCardDetails:
+
+RequestBodyJSON:
+
+{
+	"cardid": "2",
+	"card_number": "1234567891011121",
+	"expiry_date": "2020-02-21",
+	"cvv": "124",
+	"card_type": "VISA"
+}
+
+ResponseBodyJSON:
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "CARD_DETAILS_UPDATED",
+}
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "CARD_NOT_UPDATED",
+}
+
+o) /deleteCardDetails:
+
+RequestBodyJSON:
+
+{
+	"cardid" : "2"
+}
+
+ResponseBodyJSON:
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "CARD_DETAILS_DELETED",
+}
+
+{
+	"status":"SUCCESS",
+	"addressStatus": "CARD_NOT_DELETED",
+}
